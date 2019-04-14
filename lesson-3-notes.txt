@@ -54,3 +54,8 @@ NPE lehetőség
 Constructor based di: amikor az osztály mezőjét constructor-ral példányosítjuk,
 ekkor a példány létre sem jöhet a megfelelő mező megadás nélkül
 BEST PRACTICE
+
+Nota Bene:
+- @Autowired mehet setterre is.
+- controller, service, etc annotációkkal pakolok osztályokat a spring context-be
+
