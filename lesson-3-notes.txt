@@ -1,0 +1,56 @@
+S.O.L.I.D. principles of OOP
+
+-> focus on dependency management
+
+1. Single Responsibility principle
+"Just because you can, doesn't mean you should."
+• Every Class should have a single responsibility.
+• There should never be more than one reason for a class to
+change.
+• Your classes should be small. No more than a screen full of
+code.
+• Avoid ‘god’ classes.
+• Split big classes into smaller classes.
+
+2. Open closed principle
+"Open chest surgery is not neede when putting up a coat."
+• Your classes should be open for extension
+• But closed for modification
+• You should be able to extend a classes behavior, without
+modifying it.
+• Use private variables with getters and setters - ONLY when
+you need them.
+• Use abstract base classes
+
+3. Liskov Substitution principle
+"If It looks like a duck, quacks like a duck, but needs Batteries - You probably have the wrong abtraction"
+
+4. Interface segregation principle
+• Make fine grained interfaces that are client specific
+• Many client specific interfaces are better than one “general
+purpose” interface
+• Keep your components focused and minimize
+dependencies between them
+• Notice relationship to the Single Responsibility Principle?
+• ie avoid ‘god’ interfaces
+
+5. Dependency inversion principle
+"Would you solder a lamp directly to the electrical wiring in the wall?"
+• Abstractions should not depend upon details
+• Details should not depend upon abstractions
+• Important that higher level and lower level objects
+depend on the same abstract interaction
+• This is not the same as Dependency Injection - which is
+how objects obtain dependent objects
+
+//////////////////////////////////////////////////
+Life without dependency injection:
+
+Property based di: az osztály publikus mezőjét példányosítjuk
+
+Getter(setter)-Based di: amikor az osztály mezőjét setter példányosítjuk
+NPE lehetőség
+
+Constructor based di: amikor az osztály mezőjét constructor-ral példányosítjuk,
+ekkor a példány létre sem jöhet a megfelelő mező megadás nélkül
+BEST PRACTICE
