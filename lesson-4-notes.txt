@@ -1,0 +1,3 @@
+basepackages-zel megadhatom a Bean-ek keresési fájának
+gyökérpontját, és a spring onnan lefelé/felfelé fog keresni
+
