@@ -1,5 +1,7 @@
 package guru.springframework;
 
+import guru.examplebeans.FakeDataSource;
+import guru.examplebeans.FakeJmsBroker;
 import guru.springframework.controllers.ConstructorInjectedController;
 import guru.springframework.controllers.GetterInjectedController;
 import guru.springframework.controllers.MyController;
@@ -10,7 +12,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"guru.services", "guru.springframework"})
+@ComponentScan(basePackages = {"guru.services", "guru.springframework", "guru.config"})
 public class DiDemoApplication {
 
     public static void main(String[] args) {
@@ -18,9 +20,12 @@ public class DiDemoApplication {
 
         MyController controller = (MyController) ctx.getBean("myController");
 
-        System.out.println(controller.hello());
-        System.out.println(ctx.getBean(PropertyInjectedController.class).sayHello());
-        System.out.println(ctx.getBean(GetterInjectedController.class).sayHello());
-        System.out.println(ctx.getBean(ConstructorInjectedController.class).sayHello());
+        FakeDataSource fakeDataSource = (FakeDataSource) ctx.getBean(FakeDataSource.class);
+
+        System.out.println(fakeDataSource.getUser());
+
+        FakeJmsBroker fakeJmsBroker = (FakeJmsBroker) ctx.getBean(FakeJmsBroker.class);
+
+        System.out.println(fakeJmsBroker.getUsername());
     }
 }
